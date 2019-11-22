@@ -1,7 +1,7 @@
 package com.example.auth.app.main;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.annotation.SuppressLint;
@@ -24,13 +24,13 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 
+import com.example.auth.R;
 import com.example.auth.app.fragments.ArchiveFragment;
 import com.example.auth.app.fragments.ConsolePopup;
 import com.example.auth.app.fragments.DumpFragment;
 import com.example.auth.app.fragments.EmulatorFragment;
 import com.example.auth.app.fragments.KeyListFragment;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 import java.util.Calendar;
 
@@ -211,7 +211,7 @@ public class MyActivity extends Activity implements ActionBar.OnNavigationListen
                         userMode.setCardAvailable(false);
                     }
                     if (dumpMode.isVisible()) {
-                        DumpFragment.update();
+                        dumpMode.update();
                     }
                 }
             }
@@ -226,7 +226,6 @@ public class MyActivity extends Activity implements ActionBar.OnNavigationListen
 
     public void showConsoleWindow() {
         consoleWindow.show(fm, "console_popup");
-//        console_button.setIcon(R.drawable.ic_action_show_console);
     }
 
     private void promptNfc() {

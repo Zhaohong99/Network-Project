@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 import java.util.Comparator;
 

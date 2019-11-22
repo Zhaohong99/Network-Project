@@ -1,17 +1,17 @@
 package com.example.auth.app.main;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.auth.R;
 import com.example.auth.app.fragments.FileNameComparator;
 import com.example.auth.app.fragments.KeyListFragment;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 import java.io.BufferedReader;
 import java.io.File;

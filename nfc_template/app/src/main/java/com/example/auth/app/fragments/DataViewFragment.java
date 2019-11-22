@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.app.Fragment;
@@ -45,7 +45,7 @@ public class DataViewFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_data_view, container, false);
 
-        data_view = view.findViewById(R.id.file_data_view);
+        data_view = (TextView) view.findViewById(R.id.file_data_view);
         data_view.setText(content);
 
         return view;

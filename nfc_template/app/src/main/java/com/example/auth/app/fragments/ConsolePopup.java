@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.app.DialogFragment;
@@ -13,10 +13,10 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.auth.R;
 import com.example.auth.app.main.FileManager;
 import com.example.auth.app.main.MyActivity;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 public class ConsolePopup extends DialogFragment {
 
@@ -40,14 +40,14 @@ public class ConsolePopup extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.console_popup, container);
-        console = view.findViewById(R.id.console);
-        scrollView = view.findViewById(R.id.scrollView);
+        console = (TextView) view.findViewById(R.id.console);
+        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
         console.setText(Reader.history);
-        btn_archive = view.findViewById(R.id.btn_console_archive);
+        btn_archive = (Button) view.findViewById(R.id.btn_console_archive);
 
         btn_archive.setOnClickListener(btn_archive_listener);
 
-        console_hint = view.findViewById(R.id.console_hint);
+        console_hint = (TextView) view.findViewById(R.id.console_hint);
 
         if (console.getText().length() >= 1) {
             console_hint.setVisibility(View.GONE);

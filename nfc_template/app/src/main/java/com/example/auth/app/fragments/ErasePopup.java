@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -49,12 +49,12 @@ public class ErasePopup extends DialogFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.erase_popup, container);
 
-        btn_erase = view.findViewById(R.id.btn_erase);
-        btn_erase_cancel = view.findViewById(R.id.btn_erase_cancel);
+        btn_erase = (Button) view.findViewById(R.id.btn_erase);
+        btn_erase_cancel = (Button) view.findViewById(R.id.btn_erase_cancel);
 
-        current_key = view.findViewById(R.id.current_auth_key);
+        current_key = (TextView) view.findViewById(R.id.current_auth_key);
 
-        checkBox_erase_auth = view.findViewById(R.id.check_box_erase_auth);
+        checkBox_erase_auth = (CheckBox) view.findViewById(R.id.check_box_erase_auth);
         checkBox_erase_auth.setOnClickListener(new View.OnClickListener() {
 
             @Override

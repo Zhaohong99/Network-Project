@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.app.Fragment;
@@ -15,10 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.auth.R;
+import com.example.auth.app.ulctools.CardManipulationException;
 import com.example.auth.app.ulctools.Reader;
 import com.example.auth.app.ulctools.Utilities;
 import com.example.auth.ticket.Ticket;
-import com.example.auth.R;
 
 import java.security.GeneralSecurityException;
 import java.util.Date;
@@ -31,7 +32,7 @@ public class EmulatorFragment extends Fragment {
     private Button btn_issue;
     private Button btn_validate;
 
-    public boolean issue_mode = false;
+    public boolean issue_mode = true;
     public boolean active = false;
 
     public EmulatorFragment() {
@@ -70,11 +71,23 @@ public class EmulatorFragment extends Fragment {
         }
     }
 
+    private void handleCardManipulationException(CardManipulationException e){
+
+        ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_RING, 100);
+        toneG.startTone(ToneGenerator.TONE_CDMA_ABBR_INTERCEPT, 100);
+        ticket_info.setText("MANIPULATION: "+e.getMessage());
+
+        System.out.println("MANIPULATION: "+e.getMessage());
+    }
+
     public void issue() {
         if (active && Reader.connect()) {
             try {
                 ticket.issue(30, 10);
-                ticket_info.setText(Ticket.getInfoToShow());
+                ticket_info.setText(ticket.getInfoToShow());
+                System.out.println(ticket.getInfoToShow());
+            }catch(CardManipulationException e){
+                handleCardManipulationException(e);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -82,7 +95,7 @@ public class EmulatorFragment extends Fragment {
         }
     }
 
-    public void use() {
+    public void use(){
         if (active && Reader.connect()) {
             try {
                 int currentTime = (int) ((new Date()).getTime() / 1000 / 60);
@@ -116,7 +129,10 @@ public class EmulatorFragment extends Fragment {
                     ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_RING, 100);
                     toneG.startTone(ToneGenerator.TONE_CDMA_ABBR_INTERCEPT, 100);
                 }
-                ticket_info.setText(Ticket.getInfoToShow());
+                ticket_info.setText(ticket.getInfoToShow());
+                System.out.println(ticket.getInfoToShow());
+            }catch (CardManipulationException e){
+                handleCardManipulationException(e);
             } catch (GeneralSecurityException g) {
                 Log.d("Error", g.toString());
             }
@@ -137,15 +153,15 @@ public class EmulatorFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_emulator, container, false);
         getActivity().getActionBar().setIcon(R.drawable.ic_launcher);
 
-        ticket_info = v.findViewById(R.id.ticket_info);
+        ticket_info = (TextView) v.findViewById(R.id.ticket_info);
         ticket_info.setText("Ticket info");
 
-        btn_issue = v.findViewById(R.id.issue_mode);
-        btn_validate = v.findViewById(R.id.validate_mode);
+        btn_issue = (Button) v.findViewById(R.id.issue_mode);
+        btn_validate = (Button) v.findViewById(R.id.validate_mode);
 
-        issue_mode = false;
-        btn_issue.setSelected(false);
-        btn_validate.setSelected(true);
+        issue_mode = true;
+        btn_issue.setSelected(true);
+        btn_validate.setSelected(false);
 
         btn_issue.setOnClickListener(issue_listener);
         btn_validate.setOnClickListener(validate_listener);

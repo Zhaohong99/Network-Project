@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.app.ListFragment;
@@ -15,9 +15,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.auth.R;
 import com.example.auth.app.main.FileManager;
 import com.example.auth.app.main.MyActivity;
-import com.example.auth.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

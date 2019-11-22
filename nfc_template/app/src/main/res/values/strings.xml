@@ -2,7 +2,9 @@
 <resources>
 
     <!--APP NAME-->
-    <string name="app_name">CS-E4300</string>
+    <string name="app_name">Auth</string>
+
+    <!--APP SECTION TITLES-->
 
     <!--TOOL POPUP ITEMS-->
     <string name="action_erase_all">Erase all</string>
@@ -10,7 +12,7 @@
 
     <!-- DUMP MENU STRINGS -->
     <string name="menu_normal_mode">Normal Mode</string>
-    <string name="menu_log">Log</string>
+    <string name="menu_log">APDU history</string>
     <string name="menu_keys">Keys</string>
     <string name="menu_dump">Dump</string>
 
@@ -22,12 +24,12 @@
 
     <!--CONTEXTUAL ACTIONBAR ITEMS-->
     <string name="action_delete">Delete</string>
-    <string name="select_all">Select all</string>
 
     <!--ACTION BUTTON TITLE-->
     <string name="action_show_console">Console</string>
 
     <!--TICKET SECTION BUTTON TITLES-->
+
     <string name="issue_mode">Issue</string>
     <string name="validate_mode">Validate</string>
 
@@ -45,9 +47,6 @@
     <string name="tag_tap_hint">Tap a tag</string>
     <string name="automatic_authentication">"Automatic authentication when tag is found"</string>
     <string name="console_hint">"Console is empty"</string>
-    <string name="share">Share</string>
-    <string name="bin">BIN</string>
-    <string name="refresh">Refresh</string>
 
     <!--INFO STRINGS-->
     <string name="write_key_info">"This function lets you change the authentication key on an Ultralight C tag. The authentication key is stored on pages 44–47, and if the pages are protected by the AUTH settings, then you must set authentication enabled before attempting to write the key.\n\nChoose the new key from the spinner list."</string>

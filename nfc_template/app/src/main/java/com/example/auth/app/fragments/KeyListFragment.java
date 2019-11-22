@@ -1,8 +1,9 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
+
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,10 +24,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.auth.R;
 import com.example.auth.app.main.FileManager;
 import com.example.auth.app.main.MyActivity;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 import java.util.ArrayList;
 
@@ -79,12 +80,12 @@ public class KeyListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_key_list, container, false);
 
-        listView = view.findViewById(R.id.key_list);
+        listView = (ListView) view.findViewById(R.id.key_list);
 
-        key_in_use = view.findViewById(R.id.key_in_use);
+        key_in_use = (TextView) view.findViewById(R.id.key_in_use);
         key_in_use.setText(getString(R.string.key_in_use) + Reader.authKey);
 
-        auto_auth_switch = view.findViewById(R.id.auto_auth_switch);
+        auto_auth_switch = (Switch) view.findViewById(R.id.auto_auth_switch);
         auto_auth_switch.setChecked(MyActivity.autoAuth);
 
         return view;
@@ -130,7 +131,6 @@ public class KeyListFragment extends Fragment {
                     key_in_use.setText(getString(R.string.key_in_use) + Reader.authKey);
                     Toast.makeText(MyActivity.outer, getString(R.string.key_in_use) + Reader.authKey, Toast.LENGTH_SHORT).show();
                     adapter.notifyDataSetChanged();
-//                    MyActivity.showConsoleHint();
                     MyActivity.autoAuth = true;
                     auto_auth_switch.setChecked(true);
                 } else {

@@ -1,8 +1,9 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
+
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -12,9 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.auth.R;
 import com.example.auth.app.main.MyActivity;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -39,8 +40,8 @@ public class KeyListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.fragment_list_item, parent, false);
-        TextView date_view = rowView.findViewById(R.id.date_string);
-        TextView key_view = rowView.findViewById(R.id.key_string);
+        TextView date_view = (TextView) rowView.findViewById(R.id.date_string);
+        TextView key_view = (TextView) rowView.findViewById(R.id.key_string);
 
 
         String[] days = MyActivity.outer.getResources().getStringArray(R.array.weekdays);
@@ -48,12 +49,12 @@ public class KeyListAdapter extends ArrayAdapter<String> {
 
         String[] parts = values.get(position).toString().split(",");
         String dateString;
-        ImageView colorStrip = rowView.findViewById(R.id.list_item_icon);
-        ImageView is_selected = rowView.findViewById(R.id.is_selected);
+        ImageView colorStrip = (ImageView) rowView.findViewById(R.id.list_item_icon);
+        ImageView is_selected = (ImageView) rowView.findViewById(R.id.is_selected);
 
         int color;
 
-        if (parts[0].contains("d")) {
+        if (parts[0].toString().contains("d")) {
             dateString = MyActivity.outer.getString(R.string.default_key);
             colorStrip.setColorFilter(R.color.default_key, PorterDuff.Mode.MULTIPLY);
         } else {

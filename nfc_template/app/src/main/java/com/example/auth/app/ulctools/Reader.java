@@ -1,7 +1,7 @@
 package com.example.auth.app.ulctools;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 import android.nfc.tech.MifareUltralight;
 import android.nfc.tech.NfcA;
@@ -23,7 +23,7 @@ public class Reader {
 
     public static String authKey = "BREAKMEIFYOUCAN!";
     public static NfcA nfcA_card;
-    public static boolean safeMode = false;
+    public static boolean safeMode = true;
     public static HashMap<Integer, Integer> pageMap = new HashMap<Integer, Integer>();
 
     public Reader() {

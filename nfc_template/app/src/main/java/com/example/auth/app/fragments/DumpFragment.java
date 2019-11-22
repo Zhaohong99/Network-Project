@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.app.ActionBar;
@@ -18,10 +18,10 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import com.example.auth.R;
 import com.example.auth.app.main.MyActivity;
 import com.example.auth.app.ulctools.Dump;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 public class DumpFragment extends Fragment {
 
@@ -126,24 +126,24 @@ public class DumpFragment extends Fragment {
         actionBar.setIcon(R.drawable.ic_launcher);
         View v = inflater.inflate(R.layout.fragment_tools, container, false);
 
-//        safeMode_indicator = v.findViewById(R.id.safemode_indicator);
-        auth_info = v.findViewById(R.id.auth_info);
+        safeMode_indicator = (TextView) v.findViewById(R.id.safemode_indicator);
+        auth_info = (TextView) v.findViewById(R.id.auth_info);
 
-//        if (Reader.safeMode) {
-//            safeMode_indicator.setEnabled(true);
-//            safeMode_indicator.setText("safe mode on");
-//        } else {
-//            safeMode_indicator.setEnabled(false);
-//            safeMode_indicator.setText("safe mode off");
-//        }
+        if (Reader.safeMode) {
+            safeMode_indicator.setEnabled(true);
+            safeMode_indicator.setText("safe mode on");
+        } else {
+            safeMode_indicator.setEnabled(false);
+            safeMode_indicator.setText("safe mode off");
+        }
 
-        card_data = v.findViewById(R.id.tools_data_view);
+        card_data = (TextView) v.findViewById(R.id.tools_data_view);
         card_data.setText(received_data);
 
-        btn_tools = v.findViewById(R.id.tool_list);
+        btn_tools = (ImageButton) v.findViewById(R.id.tool_list);
         btn_tools.setOnClickListener(tool_popup_listener);
 
-        tag_hint = v.findViewById(R.id.tag_hint);
+        tag_hint = (TextView) v.findViewById(R.id.tag_hint);
         if (card_data.getText().length() > 5) tag_hint.setVisibility(View.GONE);
 
         if (MyActivity.nfcA_available) {

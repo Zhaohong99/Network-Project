@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/emulator_background_shape" />
+        android:src="@drawable/emulator_background_shape"/>
 
     <LinearLayout
         android:layout_width="fill_parent"

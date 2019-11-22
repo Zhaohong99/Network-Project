@@ -10,7 +10,7 @@
     <item name="topbar" type="color">#ff456dc2</item>
     <item name="white" type="color">#fffefff6</item>
     <item name="list_item_title" type="color">#ff3b3b3b</item>
-    <item name="button_disabled" type="color">#585858</item>
+    <item name="button_disabled" type="color">#8b456dc2</item>
     <item name="button_pressed" type="color">#ffffff</item>
     <item name="text_enabled" type="color">#ffffff</item>
     <item name="text_disabled" type="color">#ffababab</item>

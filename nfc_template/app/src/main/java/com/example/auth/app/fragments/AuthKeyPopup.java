@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 
 import android.app.DialogFragment;
@@ -19,10 +19,10 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.auth.R;
 import com.example.auth.app.main.FileManager;
 import com.example.auth.app.main.MyActivity;
 import com.example.auth.app.ulctools.Reader;
-import com.example.auth.R;
 
 public class AuthKeyPopup extends DialogFragment {
 
@@ -78,7 +78,7 @@ public class AuthKeyPopup extends DialogFragment {
         View view;
         if (mode == 0) {
             view = inflater.inflate(R.layout.key_write_popup, container);
-            select_key = view.findViewById(R.id.select_key_spinner);
+            select_key = (Spinner) view.findViewById(R.id.select_key_spinner);
 
 
             String[] values = new String[FileManager.keys.size()];
@@ -89,9 +89,9 @@ public class AuthKeyPopup extends DialogFragment {
             select_key.setAdapter(new ArrayAdapter<String>(MyActivity.outer,
                     R.layout.simple_spinner_item, android.R.id.text1, values));
 
-            current_key = view.findViewById(R.id.current_auth_key);
+            current_key = (TextView) view.findViewById(R.id.current_auth_key);
 
-            checkBox_auth = view.findViewById(R.id.check_box_auth);
+            checkBox_auth = (CheckBox) view.findViewById(R.id.check_box_auth);
             checkBox_auth.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -108,8 +108,8 @@ public class AuthKeyPopup extends DialogFragment {
                 }
             });
 
-            btn_dialog_proceed = view.findViewById(R.id.btn_dialog_proceed);
-            btn_dialog_cancel = view.findViewById(R.id.btn_dialog_cancel);
+            btn_dialog_proceed = (Button) view.findViewById(R.id.btn_dialog_proceed);
+            btn_dialog_cancel = (Button) view.findViewById(R.id.btn_dialog_cancel);
 
             btn_dialog_proceed.setOnClickListener(btn_dialog_proceed_listener);
             btn_dialog_cancel.setOnClickListener(btn_dialog_cancel_listener);
@@ -119,12 +119,12 @@ public class AuthKeyPopup extends DialogFragment {
         } else {
             view = inflater.inflate(R.layout.key_popup, container);
 
-            bottom_hint = view.findViewById(R.id.bottom_hint);
-            auth_key = view.findViewById(R.id.auth_key);
+            bottom_hint = (TextView) view.findViewById(R.id.bottom_hint);
+            auth_key = (EditText) view.findViewById(R.id.auth_key);
 
 
-            btn_dialog_proceed = view.findViewById(R.id.btn_dialog_proceed);
-            btn_dialog_cancel = view.findViewById(R.id.btn_dialog_cancel);
+            btn_dialog_proceed = (Button) view.findViewById(R.id.btn_dialog_proceed);
+            btn_dialog_cancel = (Button) view.findViewById(R.id.btn_dialog_cancel);
 
             btn_dialog_proceed.setOnClickListener(btn_dialog_proceed_listener);
             btn_dialog_cancel.setOnClickListener(btn_dialog_cancel_listener);
@@ -132,7 +132,7 @@ public class AuthKeyPopup extends DialogFragment {
             btn_dialog_proceed.setEnabled(false);
 
 
-            title = view.findViewById(R.id.dialog_title);
+            title = (TextView) view.findViewById(R.id.dialog_title);
 
             title.setText(getString(R.string.new_key));
             btn_dialog_proceed.setText(getString(R.string.save_key));
@@ -157,7 +157,7 @@ public class AuthKeyPopup extends DialogFragment {
                 }
             });
         }
-        info_popup = view.findViewById(R.id.info_popup);
+        info_popup = (ImageButton) view.findViewById(R.id.info_popup);
         info_popup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

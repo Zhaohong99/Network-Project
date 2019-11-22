@@ -1,8 +1,9 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
+
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,9 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.auth.R;
 import com.example.auth.app.main.FileManager;
 import com.example.auth.app.main.MyActivity;
-import com.example.auth.R;
 
 import java.util.ArrayList;
 
@@ -40,9 +41,9 @@ public class ArchiveAdapter extends ArrayAdapter<String> {
         if (rowView == null)
             rowView = inflater.inflate(R.layout.fragment_list_item, parent, false);
 
-        TextView date_view = rowView.findViewById(R.id.date_string);
-        TextView uid_view = rowView.findViewById(R.id.key_string);
-        ImageView icon = rowView.findViewById(R.id.list_item_icon);
+        TextView date_view = (TextView) rowView.findViewById(R.id.date_string);
+        TextView uid_view = (TextView) rowView.findViewById(R.id.key_string);
+        ImageView icon = (ImageView) rowView.findViewById(R.id.list_item_icon);
 
         String value = values.get(position).toString();
 

@@ -1,7 +1,7 @@
 package com.example.auth.app.fragments;
 /**
  * Developed for Aalto University course CS-E4300 Network Security.
- * Copyright (C) 2019 Aalto University
+ * Copyright (C) 2017 Aalto University
  */
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -33,9 +33,9 @@ public class InfoPopup extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.info_popup, container);
-        info_text = view.findViewById(R.id.info_text);
+        info_text = (TextView) view.findViewById(R.id.info_text);
         info_text.setText(info);
-        btn_close = view.findViewById(R.id.btn_close);
+        btn_close = (Button) view.findViewById(R.id.btn_close);
 
         btn_close.setOnClickListener(btn_close_listener);
 

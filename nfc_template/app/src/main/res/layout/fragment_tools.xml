@@ -22,7 +22,7 @@
         android:layout_alignParentTop="true"
         android:background="@color/topbar">
 
-<!--        <TextView
+        <TextView
             android:layout_alignParentRight="true"
             android:id="@+id/safemode_indicator"
             android:layout_marginRight="12dp"
@@ -35,13 +35,13 @@
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:text="safe mode on"
-            android:background="@drawable/safemode_indicator" />-->
+            android:background="@drawable/safemode_indicator" />
 
         <TextView
             android:id="@+id/auth_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@id/safemode_indicator"
             android:layout_alignParentLeft="true"
             android:textSize="14sp"
             android:singleLine="true"
@@ -79,7 +79,7 @@
         android:src="@drawable/toolbutton_states"
         android:background="@null"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+        android:layout_height="wrap_content" />
+
 
 </RelativeLayout>
