@@ -1,0 +1,49 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/liuzh/Desktop/NFC-Ticket-App-master 2/L:\\uni\\NetSec\\Project2\\CS-E4300_ANDROID\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
+            "map": [
+                {
+                    "source": "/Users/liuzh/Desktop/NFC-Ticket-App-master 2/C:\\Users\\Phillip\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\decf91738be9c4b716313811966e716a\\res\\values-km\\values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/liuzh/Desktop/Git/Network-Project/NFC-Ticket-App-master 2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "map": [
+                {
+                    "source": "/Users/liuzh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3673034f0d21205d930b058a1771910b/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/liuzh/Desktop/NFC-Ticket-App-master 2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "map": [
+                {
+                    "source": "/Users/liuzh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3673034f0d21205d930b058a1771910b/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
