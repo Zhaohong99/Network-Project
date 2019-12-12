@@ -1,4 +1,0 @@
-#Sat Nov 23 00:43:21 EET 2019
-base.0=/Users/liuzh/Desktop/NFC-Ticket-App-master 2/app/build/intermediates/transforms/dexMerger/debug/94
-renamed.0=classes.dex
-file.0=/Users/liuzh/Desktop/NFC-Ticket-App-master 2/app/build/intermediates/transforms/dexMerger/debug/94/classes.dex
